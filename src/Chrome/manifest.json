@@ -1,0 +1,24 @@
+{
+
+	"manifest_version": 2,
+	"name": "ServiceMeow",
+	"version": "0.3",
+	
+	"description": "Automatically fills out relevant fields in new incidents. Icon by Aha-Soft (http://www.aha-soft.com/)",
+	
+	"permissions": ["activeTab"],
+	"background": {
+		"scripts": ["newinc.js"]
+	},
+	"browser_action": {
+		"default_icon": "icons/cat.png"
+	},
+	
+	"content_scripts": [
+		{
+			"matches":["*://oservice.service-now.com/*"],
+			"js": ["servicemeow.js"]
+		}
+	]
+
+}
